@@ -60,8 +60,8 @@ document.getElementById("divideNumbers").addEventListener("click", divideNumbers
 /* Decision Structure */
 let todaysDate = new Date();
 let currentYear;
-currentYear = todaysDate.getFullYear;
-document.getElementById("year").textContent = currentYear;
+currentYear = todaysDate.getFullYear();
+document.getElementById("year").innerHTML = currentYear;
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
