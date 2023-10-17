@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Hunter World: Armor Planner | CSE 121b </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <nav>
+    <ul id="menu">
+      <li><a id="toggleMenu">&equiv;</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="w01-task.html">W1 Task</a></li>
+      <li><a href="w03-task.html">W3 Task</a></li>
+      <li><a href="w04-task.html">W4 Task</a></li>
+      <li><a href="w05-task.html">W5 Task</a></li>
+      <li><a href="project.html">Project</a></li>
+    </ul>
+  </nav>
+
+  <main id="armorPlanner">
+    <div id="introduction">
+      Welcome, hunter, to the Monster Hunter World armor planner!<br>
+      Choose a skill below to see all the armor pieces with that skill.     
+    </div>
+    <div id="skillSelector">
+      <select id="skillsList" title="Choose a skill.">
+        <option value="none">Choose a Skill</option>
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div id="message"></div>
+    <div>
+      <section>
+        <h1>Armor List</h1>
+        <dl id="armorList"></dl>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy;<span id="year"></span> | Brandon Cushenberry | CSE 121b
+  </footer>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/project.js"></script>
+</body>
+
+</html>

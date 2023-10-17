@@ -148,10 +148,6 @@ dt {
     font-weight: 700;
 }
 
-dt::before {
-    content: "🏘️ ";
-}
-
 dd {
     margin: 0 0 .5rem 2rem;
     font-size: smaller;
@@ -208,6 +204,36 @@ footer {
     justify-content: center;
 }
 
+#armorPlanner {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#introduction {
+    align-items: center;
+}
+
+
+#armorList dt::before{
+    content: "🛡️";
+}
+
+#armorList dt{
+    font-size: small;
+}
+
+#armorList {
+    width: 70vw;
+    columns: 3;
+}
+
+#places-lived dt::before {
+    content: "🏘️ ";
+}
 
 #section1 {
     background-color: rgb(225, 250, 225, .5);
