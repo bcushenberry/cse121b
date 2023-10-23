@@ -1,19 +1,28 @@
-/* Javascript Project: Armor Planner */
+/* Import global variables and the reset function */
+import { skillsListElement, messageElement } from "./project-elements.js"
+import { reset } from "./reset.js"
 
-/* Declare and initialize global variables */
-const skillsListElement = document.getElementById("skillsList");
-const armorListElement = document.getElementById("armorList");
-const messageElement = document.getElementById("message");
+/* Javascript Project: Armor Planner */
 
 let skillsList = [];
 let armorList = [];
+
+/* ========== API Calls ========== */
 
 /* Get a list of all skills from the API using an async function */
 const getSkills = async () => {
     const response = await fetch("https://mhw-db.com/skills");
     skillsList = await response.json();
-    displaySkills(skillsList);
+    displaySkills(skillsList);    
 };
+
+/* Get a list of all armor pieces from the API using an async function */
+const getArmorList = async () => {
+    const response = await fetch("https://mhw-db.com/armor");
+    armorList = await response.json();
+};
+
+/* ========== Drop-down Menu ========== */
 
 /* Add each skill name to the pull-down menu */
 const displaySkills = (skills) => {
@@ -22,16 +31,11 @@ const displaySkills = (skills) => {
         let listOption = document.createElement("option");
         listOption.value = skill.name;
         listOption.textContent = skill.name;
-        skillsListElement.appendChild(listOption);
+        skillsListElement.appendChild(listOption);        
     });
 };
 
-/* Get a list of all armor pieces from the API using an async function */
-const getArmorList = async () => {
-    const response = await fetch("https://mhw-db.com/armor");
-    armorList = await response.json();
-    displayArmorList(armorList);
-};
+/* ========== Armor List ========== */
 
 /* A function to display all the armor pieces and their skills */
 const displayArmorList = function (armors){
@@ -68,11 +72,8 @@ const displayArmorList = function (armors){
 });
 };
 
-/* Create a function that resets the armor list and message */
-const reset = function () {
-    armorListElement.innerHTML = "";
-    messageElement.textContent = "";
-};
+/* ========== Armor List Filtering ========== */
+
 /* Display any armor piece that matches the skill selected in the drop-down menu. */
 const displayMatchingArmor = (armors) => {
     reset();
